@@ -72,12 +72,12 @@ class OpenSSL::Cipher
     cipherinit
   end
 
-  def update(in)
-    ina = case in
+  def update(inv)
+    ina = case inv
           when String
-            in.bytes
+            inv.bytes
           else
-            in
+            inv
           end
 
     outl = ina.size + 2*block_size
